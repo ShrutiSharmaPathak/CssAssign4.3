@@ -1,0 +1,47 @@
+
+/* Line height method
+This method involves setting the line-height property in css, to be the same as the containers height.
+In this example line-height is equal to height of the container <article>
+It works because an image is only considered to be one line, and by setting the image’s vertical align property,
+we can make it sit in the middle of the line.
+
+*/
+/*Selector Styling*/
+/*
+article             
+{
+   display: block;
+    border:1px black solid;
+    height: 100px;
+    line-height: 100px;
+}
+img
+{
+    width:50px;
+    height:50px;
+    vertical-align: middle;
+}
+/* End of the line height method*/
+
+
+
+article                      /* CSS Selector Styling*/
+{
+    
+    border:1px black solid; /* CSS Border Styling*/
+    height: 100px;
+    position:relative; /*Make the container <article> relatively positioned,which declares it to be a
+                         container for absolutely positioned element <img>. */
+}            
+
+#art1 img                   /*CSS Nesting Styling*/
+{
+        width:50px;
+        height:50px;
+        margin: 0;
+        position:absolute;  /*Make the element <img> itself absolutely positioned.*/            
+        top:50%;   /*Place the element <img> at 50% of the height of the container <article> */
+        transform:translate(0, -50%); /* Use a translation to move the element <img> up by half its own
+                                         height. (The '50%' in 'translate(0, -50%)' refers to the height
+                                         of the element itself.) */
+}   
